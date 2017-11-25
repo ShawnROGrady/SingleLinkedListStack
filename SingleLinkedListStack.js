@@ -10,9 +10,8 @@
   3. print the entire stack
   4. close the program
 
-+I currently believe I can push values, pop values, and print the stack
++I currently believe I can push values, pop values, and print the stack based on user input
   -pop function feels like it could be improved
-  -need to add main function to take user input
 */
 
 //using strict node for safety
@@ -62,7 +61,7 @@ function sllStack(){
       top=tmp;
       bottom=tmp;
     }
-    console.log(tmp.value + " was pushed");
+    alert(tmp.value + " was pushed");
   }
 
   //pop function:
@@ -83,11 +82,11 @@ function sllStack(){
       }
 
 
-      console.log(tmp.value+" was popped");
+      alert(tmp.value+" was popped");
 
     }else{
       //stack is empty
-      console.log("stack is empty, cannot pop an item");
+      alert("stack is empty, cannot pop an item");
     }
 
   }
@@ -106,10 +105,10 @@ function sllStack(){
         tmp=tmp.prevNode;
         stackString=stackString+tmp.value+"\r";  //add value to the string
       }
-      console.log(stackString); //print the entirety of the stack as single string
+      alert(stackString); //print the entirety of the stack as single string
     }else{
       //stack is empty
-      console.log("stack is empty");
+      alert("stack is empty");
     }
   }
 
@@ -123,7 +122,7 @@ function sllStack(){
 }
 
 //testing basic functions:
-
+/*
 var stack=sllStack();
 stack.print();  //"stack is empty"
 
@@ -158,3 +157,36 @@ stack.pop();  //"four"
 
 stack.pop();  //"stack is empty, cannot pop an item"
 stack.print();  //"stack is empty"
+*/
+
+//main function(for taking user input):
+function main(){
+  var stack=sllStack();
+  var choice;
+  do{
+    //keep asking user for input until they choose "terminate program" or hit "cancel"
+    choice=prompt("What would you like to do? \r 1. push a value \r 2. pop a value \r 3. print the stack \r 4. terminate program");
+    if(choice==1){
+      //push a value
+      var userInput=prompt("Enter a value to push on to stack");
+      stack.push(userInput);
+    }
+    else if(choice==2){
+      //pop a value
+      stack.pop();
+    }
+    else if(choice==3){
+      //print the satck
+      stack.print();
+    }
+    else if(choice==4 || choice==null){
+      //user wishes to terminate program
+      alert("thank you for using this program!");
+    }
+    else{
+      //invalid choice
+      alert("please enter a valid choice");
+    }
+  }while(choice!=4 && choice!=null)
+}
+main();
