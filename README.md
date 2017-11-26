@@ -3,7 +3,7 @@ I am just starting to learn JavaScript and figured a good way to familarize myse
 
 This is just a modification of my code for a single linked list queue(which work on FIFO principle) so it works on LIFO principle.
 
-My end goal is to implement a single linked list queue that takes user input to perform the following four functions:
+My end goal is to implement a single linked list stack that takes user input to perform the following four functions:
 
 1. push a value
 2. pop a value
