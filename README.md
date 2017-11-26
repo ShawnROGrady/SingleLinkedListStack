@@ -8,7 +8,8 @@ My end goal is to implement a single linked list queue that takes user input to 
 1. push a value
 2. pop a value
 3. print the entire stack
-4. close the program
+4. search the stack for a specific value
+5. close the program
 
 This program is intended for personal education, and I plan on updating it as I learn more concepts in JavaScript
 
